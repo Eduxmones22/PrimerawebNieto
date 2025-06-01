@@ -16,7 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from libreria.views import crear_escritor, crear_libro, crear_comentario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    path('crear-escritor/', crear_escritor, name='crear_escritor'),
+    
+    
+    path('crear-escritor/', crear_escritor, name='crear_escritor'),
+    path('crear-libro/', crear_libro, name='crear_libro'),
+    path('crear-comentario/', crear_comentario, name='crear_comentario'),
 ]
