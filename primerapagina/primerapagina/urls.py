@@ -16,15 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from libreria.views import crear_escritor, crear_libro, crear_comentario
+from libreria.views import crear_escritor, crear_libro, crear_estudiante, index, Escritores, Libros, Estudiantes, buscar_libro
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
-    path('crear-escritor/', crear_escritor, name='crear_escritor'),
-    
-    
-    path('crear-escritor/', crear_escritor, name='crear_escritor'),
-    path('crear-libro/', crear_libro, name='crear_libro'),
-    path('crear-comentario/', crear_comentario, name='crear_comentario'),
+    path('index/', index, name='index'),  # Esto carga 'index.html' al iniciar el servidor
+    path('crear_escritor/', crear_escritor, name='crear_escritor'),
+    path('listar_escritores/', Escritores, name='listar_escritores'),
+    path('crear_libro/', crear_libro, name='crear_libro'),
+    path('listar_libros/', Libros, name='listar_libros'),
+    path('crear_estudiante/', crear_estudiante, name='crear_estudiante'),
+    path('listar_estudiantes/', Estudiantes, name='listar_estudiantes'),
+    path('buscar-libro/', buscar_libro, name='buscar_libro'),    
 ]
+

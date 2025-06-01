@@ -444,6 +444,11 @@ legend + * {
   -webkit-appearance: textfield;
 }
 
+.search-box {
+    width: 200px; /* Cambia el valor según lo que necesites */
+}
+
+
 /* rtl:raw:
 [type="tel"],
 [type="url"],

@@ -1,7 +1,7 @@
 {% extends 'libreria/index.html' %}
 
 {% block titulo %}
-<h1>Listado de Escritories</h1>
+<h1>Listado de Estudiantes</h1>
 {% endblock titulo %}
 
 {% block contenido %}
@@ -10,17 +10,17 @@
         <tr>
             <th>Id</th>
             <th>Nombre</th>
-            <th>Nacionalidad</th>
-            <th>Fecha Nacimiento</th>
+            <th>Curso</th>
+            <th>Email</th>
         </tr>
     </thead>
     <tbody>
-    {% for p in escritores  %}
+    {% for p in estudiante %}
         <tr>
             <td>{{ p.id }}</td>
             <td>{{ p.nombre }}</td>
-            <td>{{ p.nacionalidad }}</td>
-            <td>{{ p.fecha_nacimiento }}</td>
+            <td>{{ p.curso }}</td>
+            <td>{{ p.email}}</td>         
         </tr>
     {% endfor %}
     </tbody>

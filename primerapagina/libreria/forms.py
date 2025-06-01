@@ -1,5 +1,5 @@
 from django import forms
-from .models import Escritor, Libro, Comentario
+from .models import Escritor, Libro, Estudiante, Prestamo
 
 class EscritorForm(forms.ModelForm):
     class Meta:
@@ -10,8 +10,17 @@ class LibroForm(forms.ModelForm):
     class Meta:
         model = Libro
         fields = ['titulo', 'genero', 'fecha_publicacion', 'escritor']
-
-class ComentarioForm(forms.ModelForm):
+        
+class EstudianteForm(forms.ModelForm):
     class Meta:
-        model = Comentario
-        fields = ['libro', 'usuario', 'contenido']
+        model = Estudiante
+        fields = ['nombre', 'curso', 'email']      
+
+class PrestamoForm(forms.ModelForm):
+    class Meta:
+        model = Prestamo
+        fields = ['estudiante', 'libro', 'fecha_retiro', 'fecha_devolucion']
+        widgets = {
+            'fecha_retiro': forms.DateInput(attrs={'type': 'date'}),
+            'fecha_devolucion': forms.DateInput(attrs={'type': 'date'}),
+        }
